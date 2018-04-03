@@ -14711,6 +14711,9 @@ var Main = function (_Component) {
     }
   }]);
 
+
+  
+
   return Main;
 }(_react.Component);
 
@@ -14881,7 +14884,7 @@ var HomePage = function (_React$Component) {
       return _react2.default.createElement(
         _Card.Card,
         { className: 'container' },
-        _react2.default.createElement(_Card.CardTitle, { title: 'React Application', subtitle: 'This is the home page.' }),
+        _react2.default.createElement(_Card.CardTitle, { title: 'Katenna home page', subtitle: 'amazin landing page should be here.. right melissa?.' }),
         _Auth2.default.isUserAuthenticated() ? _react2.default.createElement(
           _Card.CardText,
           { style: { fontSize: '16px'} },
@@ -22521,7 +22524,7 @@ process.env.NODE_ENV !== "production" ? Avatar.propTypes = {
   /**
    * The icon or letter's color.
    */
-  color: _propTypes2.default.string,
+
   /**
    * This is the SvgIcon or FontIcon to be used inside the avatar.
    */

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import './main.css';
 // import routes from './routes.js';
 
 import {
@@ -19,6 +18,7 @@ import LogoutFunction from './containers/LogoutFunction.jsx';
 import SignUpPage from './containers/SignUpPage.jsx';
 import DashboardPage from './containers/DashboardPage.jsx';
 import Auth from './modules/Auth';
+
 
 // remove tap delay, essential for MaterialUI to work properly
 injectTapEventPlugin();
@@ -75,36 +75,34 @@ class Main extends Component {
 
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Router>
-          <div>
-            <div className="top-bar">
-              <div className="top-bar-left">
-                <Link to="/">Home</Link>
-              </div>
-              {this.state.authenticated ? (
-                <div className="top-bar-right">
-                  <Link to="/dashboard">Dashboard</Link>
-                  <Link to="/logout">Log out</Link>
-                </div>
-              ) : (
-                  <div className="top-bar-right">
-                    <Link to="/login">Log in</Link>
-                    <Link to="/signup">Sign up</Link>
-                  </div>
-                )}
-
+      <Router>
+        <div>
+          <div className="top-bar">
+            <div className="top-bar-left">
+              <Link to="/">Home</Link>
             </div>
+            {this.state.authenticated ? (
+              <div className="top-bar-right">
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/logout">Log out</Link>
+              </div>
+            ) : (
+                <div className="top-bar-right">
+                  <Link to="/login">Log in</Link>
+                  <Link to="/signup">Sign up</Link>
+                </div>
+              )}
 
-            <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <PrivateRoute path="/dashboard" component={DashboardPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <LoggedOutRoute path="/signup" component={SignUpPage} />
-            <Route path="/logout" component={LogoutFunction} />
           </div>
 
-        </Router>
-      </MuiThemeProvider>
+          <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+          <PrivateRoute path="/dashboard" component={DashboardPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+          <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+          <LoggedOutRoute path="/signup" component={SignUpPage} />
+          <Route path="/logout" component={LogoutFunction} />
+        </div>
+
+      </Router>
     );
   }
 }
