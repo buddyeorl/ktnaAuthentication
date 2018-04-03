@@ -6,9 +6,18 @@ const Dashboard = ({ secretData, user }) => (
   <Card className="container">
     <CardTitle
       title="Dashboard"
-      subtitle="This page is only seen once the user has logged in"
+      subtitle="You should get access to this page only after authentication."
     />
-    {secretData && <CardText style={{ fontSize: '16px' }}>Welcome <strong>{user.name}</strong>!<br />{secretData}</CardText>}
+    {secretData && <CardText style={{ fontSize: '16px', color: 'green' }}>Welcome <strong>{user.name}</strong>!<br />{secretData}</CardText>}
+    <div>
+      <div>
+        <iframe
+          width="350"
+          height="430"
+          src="https://console.dialogflow.com/api-client/demo/embedded/7d304919-0df1-4533-8f13-e7a0e708cddc">
+        </iframe>
+      </div>
+    </div>
   </Card>
 );
 

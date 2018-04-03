@@ -12,11 +12,11 @@ class HomePage extends React.Component {
   render() {
     return (
       <Card className="container">
-        <CardTitle title="React Application" subtitle="Home page." />
+        <CardTitle title="Katenna home page" subtitle="amazing landing page should be here.. right melissa?." />
         {Auth.isUserAuthenticated() ? (
-          <CardText style={{ fontSize: '16px' }}>You are logged in.</CardText>
+          <CardText style={{ fontSize: '16px', color: 'black' }}>Welcome! You are logged in.</CardText>
         ) : (
-            <CardText style={{ fontSize: '16px' }}>You are not logged in.</CardText>
+            <CardText style={{ fontSize: '16px', color: 'black' }}>You are not logged in.</CardText>
           )}
       </Card>
     )

@@ -41,13 +41,13 @@ const LoginForm = ({
           />
         </div>
 
-        <div className="button-line">
-          <RaisedButton type="submit" label="Log in" primary />
+        <div>
+          <button type="submit" label="Log in">Log in</button>
         </div>
 
-        <CardText>Don't have an account? <Link to={'/signup'}>Sign Up</Link>.</CardText>
+        <CardText>Don't have an account? <Link to={'/signup'} style={{ fontSize: '16px', color: 'black' }}>Create one</Link>.</CardText>
       </form>
-    </Card>
+    </Card >
   );
 
 LoginForm.propTypes = {

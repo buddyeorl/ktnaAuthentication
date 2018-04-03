@@ -49,11 +49,11 @@ const SignUpForm = ({
           />
         </div>
 
-        <div className="button-line">
-          <RaisedButton type="submit" label="Create New Account" primary />
+        <div>
+          <button type="submit" label="Create New Account" primary>Sign Up</button>
         </div>
 
-        <CardText>Already have an account? <Link to={'/login'}>Log in</Link></CardText>
+        <CardText>Already have an account? <Link to={'/login'} style={{ fontSize: '16px', color: 'black' }}>Log in</Link></CardText>
       </form>
     </Card>
   );
